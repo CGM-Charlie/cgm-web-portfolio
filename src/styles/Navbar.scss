@@ -1,0 +1,34 @@
+.navbar-content {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    .home-row {
+        min-width: 50px;
+        height: 100%;
+        margin-left: 10px;
+
+        .home-row-content {
+            margin-top: 7px;
+            margin-left: 10px;
+        }
+    }
+
+    .menu-row {
+        text-align: center;
+
+        .menu-row-options li {
+            display: inline-block;
+            padding-top: 7px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    .darkmode-row {
+        float: right;
+        margin-right: 10px;
+    }
+}
