@@ -5,8 +5,8 @@ import Navbar from './Navbar';
 function Home() {
     return (
         <div>
-            <div>Pagina de Inicio</div>
             <Navbar />
+            <div>Pagina de Inicio</div>
         </div>
     );
 }
