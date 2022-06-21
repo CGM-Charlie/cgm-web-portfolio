@@ -1,11 +1,11 @@
 import React from 'react';
 import { useColorMode, Grid, GridItem, Button, IconButton, Link } from '@chakra-ui/react';
-import { SunIcon } from '@chakra-ui/icons';
+import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 
 import '../styles/Navbar.scss';
 
 function Navbar() {
-    const { toggleColorMode } = useColorMode();
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return (
         <div className="navbar-content">
@@ -34,12 +34,16 @@ function Navbar() {
                     <IconButton
                         className="darkmode-row"
                         onClick={toggleColorMode}
-                        icon={<SunIcon />}
+                        icon={getIcon(colorMode)}
                     />
                 </GridItem>
             </Grid>
         </div>
     );
+}
+
+function getIcon(colorMode) {
+    return colorMode === 'light' ? <MoonIcon /> : <SunIcon />;
 }
 
 export default Navbar;

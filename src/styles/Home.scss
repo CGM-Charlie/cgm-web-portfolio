@@ -1,3 +1,20 @@
 .home-content {
-    height: calc(100vh - 70px);
-}
+    display: table;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    .main-title {
+        text-align: center;
+        font-size: xx-large;
+        font-weight: bold;
+    }
+
+    .main-subtitle {
+        text-align: center;
+    }
+
+    .main-paragraph {
+        min-width: 300px;
+        max-width: 450px;
+    }
+}   
