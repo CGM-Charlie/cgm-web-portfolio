@@ -1,3 +1,29 @@
-.home-content {
-    height: calc(100vh - 70px);
+.test {
+    position: inherit;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.home-content {
+    position: absolute;
+    z-index: 100;
+    display: block;
+    min-width: 550px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -75%);
+
+    .main-title {
+        text-align: center;
+        font-size: 80px;
+        font-weight: bold;
+    }
+
+    .main-subtitle {
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: black;
+    }
+}   

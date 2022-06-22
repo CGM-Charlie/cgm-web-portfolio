@@ -1,28 +1,27 @@
-import React from 'react';
-import { Grid, GridItem } from '@chakra-ui/react';
+import React, { Component } from 'react';
+import { Text } from '@chakra-ui/react';
 
-import Navbar from './Navbar';
 import '../styles/Home.scss';
+import Background3D from './Background3D';
 
-function Home() {
-    return (
-        <div className="home-content">
-            <Grid
-                templateAreas={`
-                    "header"
-                    "main"
-                `}
-                gridTemplateRows={'70px 100%'}
-                height="100%">
-                <GridItem area={'header'}>
-                    <Navbar />
-                </GridItem>
-                <GridItem overflow={'scroll'} p="2" bg="green.300" area={'main'}>
-                    Content
-                </GridItem>
-            </Grid>
-        </div>
-    );
+class Home extends Component {
+    render() {
+        return (
+            <>
+                <div className="home-content">
+                    <Text
+                        bgGradient="linear(to-r, #ee0979, #ff6a00)"
+                        bgClip="text"
+                        className="main-title">
+                        Hi, My Name Is Charlie
+                    </Text>
+                    <Text className="main-subtitle">Frontend Developer, Gaming Enthusiast</Text>
+                    <Text className="main-subtitle">Currently working @ Patio23</Text>
+                </div>
+                <Background3D />
+            </>
+        );
+    }
 }
 
 export default Home;
