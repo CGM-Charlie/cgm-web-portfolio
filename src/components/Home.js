@@ -15,7 +15,7 @@ class Home extends Component {
                         className="main-title">
                         Hi, My Name Is Charlie
                     </Text>
-                    <Text className="main-subtitle">Frontend Developer, Gaming Enthusiast</Text>
+                    <Text className="main-subtitle">Software Engineer, Gaming Enthusiast</Text>
                     <Text className="main-subtitle">Currently working @ Patio23</Text>
                 </div>
                 <Background3D />
