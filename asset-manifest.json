@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/cgm-web-portfolio/static/css/main.299f1ba4.css",
+    "main.js": "/cgm-web-portfolio/static/js/main.df6961e4.js",
+    "static/media/genus-dashboard.png": "/cgm-web-portfolio/static/media/genus-dashboard.4ca3f4af2225d68272bd.png",
+    "index.html": "/cgm-web-portfolio/index.html",
+    "main.299f1ba4.css.map": "/cgm-web-portfolio/static/css/main.299f1ba4.css.map",
+    "main.df6961e4.js.map": "/cgm-web-portfolio/static/js/main.df6961e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.299f1ba4.css",
+    "static/js/main.df6961e4.js"
+  ]
+}
