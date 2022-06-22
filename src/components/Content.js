@@ -1,8 +1,10 @@
 import React from 'react';
 import { Grid, GridItem } from '@chakra-ui/react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Navbar from './Navbar';
 import Home from './Home';
+import AboutMe from './AboutMe';
 
 import '../styles/Content.scss';
 
@@ -20,7 +22,11 @@ function Content() {
                     <Navbar />
                 </GridItem>
                 <GridItem overflow={'scroll'} p="5" area={'main'}>
-                    <Home />
+                    <Routes>
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/about" element={<AboutMe />} />
+                        <Route path="*" element={<Navigate to="/home" replace />} />
+                    </Routes>
                 </GridItem>
             </Grid>
         </div>
