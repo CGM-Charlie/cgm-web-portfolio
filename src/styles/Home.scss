@@ -1,20 +1,29 @@
+.test {
+    position: inherit;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .home-content {
-    display: table;
-    margin: 0 auto;
-    margin-top: 100px;
+    position: absolute;
+    z-index: 100;
+    display: block;
+    min-width: 550px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -75%);
 
     .main-title {
         text-align: center;
-        font-size: xx-large;
+        font-size: 80px;
         font-weight: bold;
     }
 
     .main-subtitle {
         text-align: center;
-    }
-
-    .main-paragraph {
-        min-width: 300px;
-        max-width: 450px;
+        font-size: 25px;
+        font-weight: bold;
+        color: black;
     }
 }   

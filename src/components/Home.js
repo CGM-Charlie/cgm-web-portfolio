@@ -2,20 +2,24 @@ import React, { Component } from 'react';
 import { Text } from '@chakra-ui/react';
 
 import '../styles/Home.scss';
+import Background3D from './Background3D';
 
 class Home extends Component {
     render() {
         return (
-            <div className="home-content">
-                <Text className="main-title">Hi, My Name Is Charlie</Text>
-                <Text className="main-subtitle">Frontend Developer, Gaming Enthusiast</Text>
-                <Text className="main-subtitle">Currently working @ Patio23</Text>
-                <br></br>
-                <Text className="main-paragraph">
-                    Currently pursuing my Bachelor Degree in Computer Science, Passionate about UI
-                    and UX. Work experience making Web and Android Apps
-                </Text>
-            </div>
+            <>
+                <div className="home-content">
+                    <Text
+                        bgGradient="linear(to-r, #ee0979, #ff6a00)"
+                        bgClip="text"
+                        className="main-title">
+                        Hi, My Name Is Charlie
+                    </Text>
+                    <Text className="main-subtitle">Frontend Developer, Gaming Enthusiast</Text>
+                    <Text className="main-subtitle">Currently working @ Patio23</Text>
+                </div>
+                <Background3D />
+            </>
         );
     }
 }
