@@ -20,12 +20,12 @@ function Navbar() {
                 <GridItem className="menu-row" colStart={2} colEnd={8}>
                     <ul className="menu-row-options">
                         <li>
-                            <Link href="/home">
+                            <Link href="home#/home">
                                 <Button variant="link">Home</Button>
                             </Link>
                         </li>
                         <li>
-                            <Link href="/about">
+                            <Link href="about#/about">
                                 <Button variant="link">About Me</Button>
                             </Link>
                         </li>

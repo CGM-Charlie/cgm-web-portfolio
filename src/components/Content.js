@@ -23,9 +23,9 @@ function Content() {
                 </GridItem>
                 <GridItem overflow={'scroll'} p="5" area={'main'}>
                     <Routes>
-                        <Route path="/home" element={<Home />} />
-                        <Route path="/about" element={<AboutMe />} />
-                        <Route path="*" element={<Navigate to="/home" replace />} />
+                        <Route exact path={'home'} element={<Home />} />
+                        <Route exact path={'about'} element={<AboutMe />} />
+                        <Route path="*" element={<Navigate exact to={'home'} replace />} />
                     </Routes>
                 </GridItem>
             </Grid>
