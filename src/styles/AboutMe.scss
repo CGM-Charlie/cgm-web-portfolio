@@ -30,5 +30,45 @@
         .section-list {
             padding-left: 15px;
         }
+
+        .section-skill-card {
+            height: 75px;
+            width: 250px;
+            border-radius: 15px;
+            transition: transform 0.1s;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                transform: scale(1.1);
+
+                &.light {
+                    background-color: var(--chakra-colors-gray-300);
+                }
+    
+                &.dark {
+                    background-color: var(--chakra-colors-gray-600);
+                }
+            }
+
+            &.light {
+                background-color: var(--chakra-colors-gray-200);
+            }
+
+            &.dark {
+                background-color: var(--chakra-colors-gray-700);
+            }
+
+            .icon {
+                margin: 20px;
+                font-size: 32px;
+            }
+
+            .card-label {
+                margin-right: 20px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
     }
 }
