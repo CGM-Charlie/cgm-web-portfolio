@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from '@chakra-ui/react';
 import {
     SiHtml5,
     SiJavascript,
@@ -13,6 +14,7 @@ import {
     SiPython,
     SiKotlin
 } from 'react-icons/si';
+import genusDashboard from '../../images/genus-dashboard.png';
 
 export function AboutMeData() {
     const aboutMeData = {
@@ -103,4 +105,56 @@ export function TopSkillsData() {
     };
 
     return topSkillsData;
+}
+
+export function ExperienceData() {
+    const experienceData = {
+        title: 'Experience',
+        experiences: [
+            {
+                title: 'Android Developer Intern @ Patio23',
+                subtitle: 'Jan 2022 - present',
+                image: null,
+                bulletPoints: [
+                    'Development of the Urbium Mobile Application for Android devices',
+                    'Developed application UI and UX components using Jetpack Compose pattern',
+                    'Connected Urbium backend services with Apollo Graphql and Room',
+                    'Developed Unit Testing Routines for UI and Internal Services'
+                ]
+            },
+            {
+                title: 'Web Developer Intern @ Patio23',
+                subtitle: 'Sept 2021 - Jan 2022',
+                image: null,
+                bulletPoints: [
+                    'Development and Maintenance of components for Intelligable Web Graphql',
+                    'Developed a quote generator for the existing projects and purchase orders orders available in the application',
+                    'Developed a dashboard to visualize and update the balance of ongoing projects'
+                ]
+            }
+        ]
+    };
+
+    return experienceData;
+}
+
+export function MajorProjectsData() {
+    const majorProjectsData = {
+        title: 'Major Projects',
+        projects: [
+            {
+                title: 'Genus Defect Clusterization Tool for Cemex',
+                subtitle: 'Feb 2022 - Jun 2022',
+                image: <Image src={genusDashboard} />,
+                bulletPoints: [
+                    'Development of a fullstack application using JavaScript, React, Graphql, Python and MongoDB',
+                    `Clusterization of defects encountered during CemexGo development non-supervized learning learning learning with K-means on Python`,
+                    `Developed Web clien File Management and Dashboard site with React`,
+                    `Developed Backend microservices with Express-JS and Graphql `
+                ]
+            }
+        ]
+    };
+
+    return majorProjectsData;
 }

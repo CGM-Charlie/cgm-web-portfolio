@@ -1,10 +1,14 @@
 import React from 'react';
-import { useColorMode, Box, SimpleGrid, Text, Image } from '@chakra-ui/react';
+import { useColorMode, Box, SimpleGrid, Text, UnorderedList, ListItem } from '@chakra-ui/react';
 import classNames from 'classnames';
 
 import '../styles/AboutMe.scss';
-import genusDashboard from '../images/genus-dashboard.png';
-import { AboutMeData, TopSkillsData } from './data/AboutMeData.js';
+import {
+    AboutMeData,
+    TopSkillsData,
+    ExperienceData,
+    MajorProjectsData
+} from './data/AboutMeData.js';
 // import charliePic from '../images/charlie-kun.png';
 
 function AboutMe() {
@@ -49,106 +53,31 @@ function TopSkillsSection() {
 }
 
 function ExperienceSection() {
+    const data = ExperienceData();
+    const { colorMode } = useColorMode();
+
     return (
         <div className="section">
-            <Text
-                bgGradient="linear(to-r, #ee0979, #ff6a00)"
-                bgClip="text"
-                className="section-title">
-                Experience
-            </Text>
-            <Text className="section-subtitle">
-                Android Developer Intern @ Patio23 • Jan 2022 - present
-            </Text>
-            <ul className="section-list">
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Development of the Urbium Mobile Application for Android devices
-                    </Text>
-                </li>
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Developed application UI and UX components using Jetpack Compose pattern
-                    </Text>
-                </li>
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Connected Urbium backend services with Apollo Graphql and Room
-                    </Text>
-                </li>
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Developed Unit Testing Routines for UI and Internal Services
-                    </Text>
-                </li>
-            </ul>
+            {SectionContent(data.title)}
             <br />
-            <Text className="section-subtitle">
-                Web Developer Intern @ Patio23 • Sept 2021 - Jan 2022
-            </Text>
-            <ul className="section-list">
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Development and Maintenance of components for Intelligable Web Graphql
-                    </Text>
-                </li>
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Developed a quote generator for the existing projects and purchase orders
-                        orders available in the application
-                    </Text>
-                </li>
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Developed a dashboard to visualize and update the balance of ongoing
-                        projects
-                    </Text>
-                </li>
-            </ul>
+            <SimpleGrid minChildWidth="500px" spacing="30px">
+                {ProjectCards(data.experiences, colorMode)}
+            </SimpleGrid>
         </div>
     );
 }
 
 function MajorProjectsSection() {
+    const data = MajorProjectsData();
+    const { colorMode } = useColorMode();
+
     return (
         <div className="section">
-            <Text
-                bgGradient="linear(to-r, #ee0979, #ff6a00)"
-                bgClip="text"
-                className="section-title">
-                Major Projects
-            </Text>
+            {SectionContent(data.title)}
             <br />
-            <Image boxSize="50%" src={genusDashboard} />
-            <br />
-            <Text className="section-subtitle">
-                Genus Defect Clusterization Tool for Cemex • Feb 2022 - Jun 2022
-            </Text>
-            <ul className="section-list">
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Development of a fullstack application using JavaScript, React, Graphql,
-                        Graphql, Python and MongoDB
-                    </Text>
-                </li>
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Clusterization of defects encountered during CemexGo development
-                        non-supervized learning learning learning with K-means on K-means on K-means
-                        K-means on Python
-                    </Text>
-                </li>
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Developed Backend microservices with Express-JS and Graphql
-                    </Text>
-                </li>
-                <li className="section-list-item">
-                    <Text className="section-paragraph">
-                        Developed Web clien File Management and Dashboard site with React
-                    </Text>
-                </li>
-            </ul>
+            <SimpleGrid minChildWidth="500px" spacing="30px">
+                {ProjectCards(data.projects, colorMode)}
+            </SimpleGrid>
         </div>
     );
 }
@@ -255,6 +184,47 @@ function SkillCards(skills, colorMode) {
     });
 
     return cards;
+}
+
+function ProjectCards(projects, colorMode) {
+    const cards = [];
+
+    projects.forEach((project) => {
+        cards.push(
+            <Box
+                className={classNames('section-project-card', {
+                    light: colorMode == 'light',
+                    dark: colorMode == 'dark'
+                })}>
+                {project.image}
+                {project.image ? <br /> : <></>}
+                <Text className="card-title">{project.title}</Text>
+                <Text className="card-subtitle">{project.subtitle}</Text>
+                <br />
+                <UnorderedList className="card-list">
+                    <ListItem className="list-item">
+                        <Text className="label">{ProjectCardListItems(project.bulletPoints)}</Text>
+                    </ListItem>
+                </UnorderedList>
+            </Box>
+        );
+    });
+
+    return cards;
+}
+
+function ProjectCardListItems(items) {
+    const listItems = [];
+
+    items.forEach((listItem, index) => {
+        listItems.push(
+            <ListItem className="list-item" key={index}>
+                <Text className="label">{listItem}</Text>
+            </ListItem>
+        );
+    });
+
+    return listItems;
 }
 
 export default AboutMe;

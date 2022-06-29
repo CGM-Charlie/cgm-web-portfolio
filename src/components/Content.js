@@ -21,7 +21,7 @@ function Content() {
                 <GridItem area={'header'}>
                     <Navbar />
                 </GridItem>
-                <GridItem overflow={'scroll'} p="5" area={'main'}>
+                <GridItem overflow={'scroll'} area={'main'}>
                     <Routes>
                         <Route exact path={'home'} element={<Home />} />
                         <Route exact path={'about'} element={<AboutMe />} />
